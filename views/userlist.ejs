@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>User List</h1>
+    <ul>
+      <%
+        var list = '';
+        var open = "<a href=\"http://localhost\">&nbspgo to broker </a>";
+        for (i = 0; i < userlist.length; i++) {
+          list += '<li><a href="http://localhost' + userlist[i].pact_contract + '">' + userlist[i].pact_contract + open + userlist[i].pact_contract +'</a></li>';
+        }
+      %>
+      <%- list %>
+    </ul>
+  </body>
+</html>

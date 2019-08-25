@@ -1,0 +1,13 @@
+
+    /*
+    const exec = require("child_process").exec
+    //var cmd = "curl -v -X PUT -H \"Content-Type: application/json\" -d '{    \"pact_contract\": \"coming soon\",    \"consumer\": {      \"name\": \"" + consumer + "\"    },    \"provider\": {      \"name\": \"" + provider +  "\"    },    \"interactions\": [      {        \"description\": \"a request for JSON data\",        \"providerState\": \"\",        \"request\": {          \"method\": \"GET\",          \"path\": \"/todos/1\"        },        \"response\": {          \"status\": 200,          \"headers\": {            \"Content-Type\": \"application/json; charset=utf-8\"          },          \"body\":           {      \"userId\": 1,      \"id\": 1,      \"title\": \"delectus aut autem\",      \"completed\": false    }        }      }    ],    \"metadata\": {      \"pactSpecification\": {        \"version\": \"2.0.0\"      }    }    }' http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
+    var cmd = "curl -v -X PUT -H \"Content-Type: application/json\" -d '" + JSON.stringify(data) + "' http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
+   
+    console.log(cmd);
+    //, (error, stdout, stderr) => {
+
+    // exec("curl -v -X PUT -H \"Content-Type: application/json\" -d '{    \"pact_contract\": \"coming soon\",    \"consumer\": {      \"name\": \"DemoConsumer2\"    },    \"provider\": {      \"name\": \"DemoProvider2\"    },    \"interactions\": [      {        \"description\": \"a request for JSON data\",        \"providerState\": \"\",        \"request\": {          \"method\": \"GET\",          \"path\": \"/todos/1\"        },        \"response\": {          \"status\": 200,          \"headers\": {            \"Content-Type\": \"application/json; charset=utf-8\"          },          \"body\":           {      \"userId\": 1,      \"id\": 1,      \"title\": \"delectus aut autem\",      \"completed\": false    }        }      }    ],    \"metadata\": {      \"pactSpecification\": {        \"version\": \"2.0.0\"      }    }    }' http://localhost/pacts/provider/DemoProvider2/consumer/DemoConsumer2/version/1.0.0", (error, stdout, stderr) => {
+    exec(cmd, (error, stdout, stderr) => {
+    */
+        /////////////

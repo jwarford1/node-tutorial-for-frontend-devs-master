@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add User</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form id="formAddUser" name="adduser" method="post" action="/adduser">
+      <input id="inputProviderUrl" type="text" placeholder="your url here" name="providerurl" width="96" height="48" />
+      <br/>
+      <br/>
+      <input id="inputConsumerName" type="text" placeholder="consumername" name="consumername" />
+      <br/>
+      <br/>
+      <input id="inputProviderName" type="text" placeholder="providername" name="providername" />
+      <br/>
+      <br/>
+      <input id="inputRestMethod" type="text" placeholder="restmethod" name="restmethod" />
+      <br/>
+      <br/>
+      <input id="inputRestPath" type="text" placeholder="restpath" name="restpath" />
+      <br/>
+      <br/>
+      <input id="httpExpectedStatus" type="text" placeholder="httpexpectedstatus" name="httpexpectedstatus" />
+      <br/>
+      <br/>
+      <textarea name="httpExpectedResponseBody" type="text" style="height:100px; width:300px;">Enter json expected response body as json...</textarea>
+      <br/>
+      <br/>
+      <!--<textarea name="metadata" type="text" style="height:100px; width:300px;">Enter metadata here...</textarea> -->
+      <button id="btnSubmit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
