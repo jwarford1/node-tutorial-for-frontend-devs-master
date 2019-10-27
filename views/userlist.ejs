@@ -6,12 +6,16 @@
   </head>
   <body>
     <h1>User List</h1>
+    <a href=\"http://localhost\">&nbsp&nbsp&nbsp Click here to see alll contracts on the broker  </a>
+    <h1> Ot go to your consumer contract by clicking the link below</h1>
     <ul>
       <%
         var list = '';
-        var open = "<a href=\"http://localhost\">&nbspgo to broker </a>";
+        var open = "<a href=\"http://localhost\">&nbspgo to broker by selecting your consumer contract link </a>";
+        
         for (i = 0; i < userlist.length; i++) {
-          list += '<li><a href="http://localhost' + userlist[i].pact_contract + '">' + userlist[i].pact_contract + open + userlist[i].pact_contract +'</a></li>';
+          var label = userlist[i].pact_contract.split('/');
+          list += '<li><a href=\"http://localhost' + userlist[i].pact_contract + '\">' + label[5] + '</a></li>';
         }
       %>
       <%- list %>

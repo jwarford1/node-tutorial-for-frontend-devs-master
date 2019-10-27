@@ -56,10 +56,6 @@ router.post('/adduser', function(req, res) {
     data["interactions"][0]["response"]["body"] = responsebody;
     data["pact_contract"] =  "/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
 
-    //console.log(data);
-       
-    
-   
     // Set our collection
     var collection = db.get('usercollection');
 
@@ -75,35 +71,19 @@ router.post('/adduser', function(req, res) {
         }
     });
 
-    /*
-    const exec = require("child_process").exec
-    //var cmd = "curl -v -X PUT -H \"Content-Type: application/json\" -d '{    \"pact_contract\": \"coming soon\",    \"consumer\": {      \"name\": \"" + consumer + "\"    },    \"provider\": {      \"name\": \"" + provider +  "\"    },    \"interactions\": [      {        \"description\": \"a request for JSON data\",        \"providerState\": \"\",        \"request\": {          \"method\": \"GET\",          \"path\": \"/todos/1\"        },        \"response\": {          \"status\": 200,          \"headers\": {            \"Content-Type\": \"application/json; charset=utf-8\"          },          \"body\":           {      \"userId\": 1,      \"id\": 1,      \"title\": \"delectus aut autem\",      \"completed\": false    }        }      }    ],    \"metadata\": {      \"pactSpecification\": {        \"version\": \"2.0.0\"      }    }    }' http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
-    var cmd = "curl -v -X PUT -H \"Content-Type: application/json\" -d '" + JSON.stringify(data) + "' http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
-   
-    console.log(cmd);
-    //, (error, stdout, stderr) => {
-
-    // exec("curl -v -X PUT -H \"Content-Type: application/json\" -d '{    \"pact_contract\": \"coming soon\",    \"consumer\": {      \"name\": \"DemoConsumer2\"    },    \"provider\": {      \"name\": \"DemoProvider2\"    },    \"interactions\": [      {        \"description\": \"a request for JSON data\",        \"providerState\": \"\",        \"request\": {          \"method\": \"GET\",          \"path\": \"/todos/1\"        },        \"response\": {          \"status\": 200,          \"headers\": {            \"Content-Type\": \"application/json; charset=utf-8\"          },          \"body\":           {      \"userId\": 1,      \"id\": 1,      \"title\": \"delectus aut autem\",      \"completed\": false    }        }      }    ],    \"metadata\": {      \"pactSpecification\": {        \"version\": \"2.0.0\"      }    }    }' http://localhost/pacts/provider/DemoProvider2/consumer/DemoConsumer2/version/1.0.0", (error, stdout, stderr) => {
-    exec(cmd, (error, stdout, stderr) => {
-    */
-        /////////////
-
-        const request = require('request')
-        pact_broker_url = 'http://pachttp://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0t-demo.sdswrite-dev.moveaws.com/pacts/provider/tempp/consumer/tempc/version/1.0.0';
+    const request = require('request')
+    pact_broker_url = "http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
         
-        request.put(pact_broker_url, {
-          json: data
-        }, (error, res, body) => {
-          if (error) {
+    request.put(pact_broker_url, {
+      json: data
+    }, (error, res, body) => {
+        if (error) {
             console.error(error)
-            return
-          }
-          console.log(`statusCode: ${res.statusCode}`)
-          console.log(body)
-        })
-    
-   
-   
+        return
+        }
+        console.log(`statusCode: ${res.statusCode}`)
+        console.log(body)
+    })
 });
 
 module.exports = router;
