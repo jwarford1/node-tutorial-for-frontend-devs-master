@@ -78,7 +78,7 @@ router.post('/adduser', function(req, res) {
     });
 
     const request = require('request')
-    pact_broker_url = "http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
+    pact_broker_url = "http://138.197.140.165/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
         
     request.put(pact_broker_url, {
       json: data
