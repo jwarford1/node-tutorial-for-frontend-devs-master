@@ -16,6 +16,7 @@
     "monk": "^6.0.6",
     "morgan": "~1.9.0",
     "node-rest-client": "^3.1.0",
+    "random-int": "^2.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   }

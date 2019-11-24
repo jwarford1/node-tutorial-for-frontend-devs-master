@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var data = require('./data.json');
 var Client = require('node-rest-client').Client;
+const crypto = require("crypto");
+const randomInt = require('random-int');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -58,6 +61,8 @@ router.post('/adduser', function(req, res) {
 
     // Set our collection
     var collection = db.get('usercollection');
+    var id = require('mongodb').ObjectID;
+    data["_id"] = id; //randomInt(10, 100);
 
     // Submit to the DB
     collection.insert(data, function (err, doc) {
@@ -67,12 +72,13 @@ router.post('/adduser', function(req, res) {
         }
         else {
             // And forward to success page
+            db.close();
             res.redirect("userlist");
         }
     });
 
     const request = require('request')
-    pact_broker_url = "http://138.197.140.165/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
+    pact_broker_url = "http://localhost/pacts/provider/" + provider + "/consumer/" + consumer + "/version/1.0.0";
         
     request.put(pact_broker_url, {
       json: data
